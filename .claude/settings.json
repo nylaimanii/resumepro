@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; cd C:\\\\Users\\\\nyla\\\\resumepro; git add .; git commit -m \"upload + parse resume pdf docx to text\"; git push 2>&1)",
-      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; cd C:\\\\Users\\\\nyla\\\\resumepro; npm run build 2>&1)"
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; cd C:\\\\Users\\\\nyla\\\\resumepro; npm run build 2>&1)",
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; cd C:\\\\Users\\\\nyla\\\\resumepro; git add .; git commit -m \"groq analysis api with caching + rate limit + bullet rewriter\"; git push 2>&1)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\nyla\\resumepro\\src\\app\\(app)\\analysis"
     ]
   }
 }
