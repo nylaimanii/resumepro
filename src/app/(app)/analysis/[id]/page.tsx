@@ -69,6 +69,11 @@ export default async function AnalysisPage({ params }: { params: Promise<{ id: s
 
       <div className="flex gap-3 justify-end pt-2">
         <Button variant="outline" disabled>export pdf</Button>
+        <Button asChild variant="outline">
+          <Link href={`/cover-letter/new?resume_id=${analysis.resume_id}${analysis.job_target_id ? `&job_target_id=${analysis.job_target_id}` : ""}`}>
+            write cover letter
+          </Link>
+        </Button>
         <Button asChild>
           <Link href={`/builder/${analysis.resume_id}`}>edit in builder</Link>
         </Button>

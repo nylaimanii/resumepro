@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { toast } from "sonner";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, PenLine } from "lucide-react";
 import { BuilderForm } from "@/components/builder/builder-form";
 import { LivePreview } from "@/components/builder/live-preview";
 import { Input } from "@/components/ui/input";
@@ -95,11 +95,20 @@ export function BuilderClient({
           onChange={(e) => setTitle(e.target.value)}
           className="h-7 w-48 text-sm border-0 shadow-none focus-visible:ring-0 p-0 font-medium"
         />
-        {statusLabel && (
-          <span className={`text-xs ml-auto ${saveStatus === "error" ? "text-red-500" : "text-muted-foreground"}`}>
-            {statusLabel}
-          </span>
-        )}
+        <div className="ml-auto flex items-center gap-2">
+          {statusLabel && (
+            <span className={`text-xs ${saveStatus === "error" ? "text-red-500" : "text-muted-foreground"}`}>
+              {statusLabel}
+            </span>
+          )}
+          <Link
+            href={`/cover-letter/new?resume_id=${resumeId}`}
+            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <PenLine className="h-3.5 w-3.5" />
+            write cover letter
+          </Link>
+        </div>
       </div>
 
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-0">
