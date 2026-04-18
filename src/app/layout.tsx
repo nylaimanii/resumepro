@@ -14,8 +14,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "resumepro — ai resume analyzer",
-  description: "ai-powered resume analysis and builder",
+  title: "resumepro — ai resume analyzer that actually tells you what's wrong",
+  description: "deterministic ats scoring, ai-powered suggestions, ats-clean pdf export. free forever.",
+  openGraph: {
+    title: "resumepro",
+    description: "the resume tool that actually tells you what's wrong",
+    type: "website",
+    url: "https://resumepro.vercel.app",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "resumepro",
+    description: "the resume tool that actually tells you what's wrong",
+  },
 };
 
 export default function RootLayout({

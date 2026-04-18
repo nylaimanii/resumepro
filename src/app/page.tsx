@@ -1,19 +1,23 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Nav } from "@/components/landing/nav";
+import { Hero } from "@/components/landing/hero";
+import { Features } from "@/components/landing/features";
+import { HowItWorks } from "@/components/landing/how-it-works";
+import { DemoSection } from "@/components/landing/demo-section";
+import { FinalCta } from "@/components/landing/final-cta";
+import { Footer } from "@/components/landing/footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center gap-6">
-      <h1 className="text-3xl font-bold tracking-tight">resumepro</h1>
-      <p className="text-muted-foreground">ai-powered resume analysis + builder</p>
-      <div className="flex gap-3">
-        <Button asChild variant="outline">
-          <Link href="/auth/login">sign in</Link>
-        </Button>
-        <Button asChild>
-          <Link href="/auth/signup">get started</Link>
-        </Button>
-      </div>
-    </main>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <Features />
+        <HowItWorks />
+        <DemoSection />
+        <FinalCta />
+      </main>
+      <Footer />
+    </>
   );
 }

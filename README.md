@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# resumepro
 
-## Getting Started
+ai-powered resume analyzer + builder. deterministic ats scoring, ai suggestions with one-click apply, ats-clean pdf export.
 
-First, run the development server:
+## stack
+
+- **next.js 15** · typescript · tailwind · shadcn/ui
+- **supabase** — postgres + auth + storage + row-level security
+- **groq** — llama 3.3 70b + llama 3.1 8b instant
+- **@react-pdf/renderer** — server-side pdf export
+
+## features
+
+- deterministic ats score with 6 measurable factors
+- keyword match against 350+ skill taxonomy
+- ai suggestions with before/after diff + one-click apply
+- resume builder with 3 ats-safe templates + live preview
+- tailored cover letter generation with tone slider
+- pdf export for resumes + cover letters
+- content-hash caching (re-analysis in <1s for same resume+jd)
+- rate limiting (10 ai calls/day, shared across analyses + cover letters)
+- no-signup live demo on the landing page (pure client-side scoring)
+
+## local dev
 
 ```bash
+npm install
+cp .env.example .env.local  # fill in your keys
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+env vars needed:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| var | source |
+|-----|--------|
+| `NEXT_PUBLIC_SUPABASE_URL` | supabase project settings |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | supabase project settings |
+| `SUPABASE_SERVICE_ROLE_KEY` | supabase project settings |
+| `GROQ_API_KEY` | console.groq.com |
+| `NEXT_PUBLIC_APP_URL` | your deployed url (or `http://localhost:3000`) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## built by
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[nyla](https://nyla-portfolio-xi.vercel.app)
