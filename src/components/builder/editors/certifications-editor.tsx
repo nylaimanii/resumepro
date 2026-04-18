@@ -22,7 +22,7 @@ export function CertificationsEditor({ certifications, onChange }: { certificati
         {certifications.map((cert) => (
           <div key={cert.id} className="space-y-2 border rounded-md p-3">
             <div className="flex justify-end">
-              <Button variant="ghost" size="icon" className="h-6 w-6 text-destructive" onClick={() => onChange(certifications.filter((c) => c.id !== cert.id))}>
+              <Button aria-label="delete certification" variant="ghost" size="icon" className="h-6 w-6 text-destructive" onClick={() => onChange(certifications.filter((c) => c.id !== cert.id))}>
                 <Trash2 className="h-3 w-3" />
               </Button>
             </div>

@@ -43,7 +43,7 @@ export function SuggestionsList({ suggestions }: { suggestions: Suggestion[] }) 
             {(["all", "high", "medium", "low"] as Filter[]).map((f) => (
               <TabsTrigger key={f} value={f} className="text-xs gap-1.5 px-3 h-6">
                 {f}
-                <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4">
+                <Badge variant="secondary" className="text-xs px-1.5 py-0 h-4">
                   {countBySeverity(f)}
                 </Badge>
               </TabsTrigger>

@@ -102,8 +102,8 @@ export function CoverLetterEditor({
   return (
     <Card>
       <CardHeader className="pb-3">
-        <div className="flex items-center justify-between gap-2 flex-wrap">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap">
             <Badge variant="secondary" className="text-xs">
               {wordCount} words · ~{minRead} min read
             </Badge>
@@ -111,7 +111,7 @@ export function CoverLetterEditor({
               {initial.tone}
             </Badge>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 flex-wrap">
             <Button size="sm" variant="ghost" className="h-7 text-xs gap-1.5" onClick={handleCopy}>
               {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
               {copied ? "copied" : "copy"}
@@ -153,7 +153,7 @@ export function CoverLetterEditor({
         <Textarea
           value={content}
           onChange={(e) => handleChange(e.target.value)}
-          className="min-h-[420px] font-serif text-sm leading-relaxed resize-none"
+          className="min-h-[300px] sm:min-h-[420px] font-serif text-sm leading-relaxed resize-none"
           placeholder="your cover letter will appear here..."
         />
 

@@ -68,14 +68,14 @@ export function SuggestionCard({
         {suggestion.original && suggestion.improved ? (
           <div className="space-y-1.5 rounded-md overflow-hidden border text-xs font-mono">
             <div className="bg-red-50 dark:bg-red-950/20 px-3 py-2 text-red-700 dark:text-red-400">
-              <span className="text-[10px] font-sans font-semibold text-red-500 uppercase tracking-wide block mb-1">original</span>
+              <span className="text-xs font-sans font-semibold text-red-500 uppercase tracking-wide block mb-1">original</span>
               {suggestion.original}
             </div>
             <div className="flex justify-center py-1 bg-muted/30">
               <ArrowDown className="h-3.5 w-3.5 text-muted-foreground" />
             </div>
             <div className="bg-emerald-50 dark:bg-emerald-950/20 px-3 py-2 text-emerald-700 dark:text-emerald-400">
-              <span className="text-[10px] font-sans font-semibold text-emerald-600 uppercase tracking-wide block mb-1">improved</span>
+              <span className="text-xs font-sans font-semibold text-emerald-600 uppercase tracking-wide block mb-1">improved</span>
               {suggestion.improved}
             </div>
           </div>

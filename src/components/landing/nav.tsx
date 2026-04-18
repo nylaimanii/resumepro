@@ -45,7 +45,7 @@ export function Nav() {
         </nav>
 
         <div className="flex items-center gap-2 shrink-0">
-          <Button asChild variant="ghost" size="sm" className="text-slate-700">
+          <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex text-slate-700">
             <Link href="/auth/login">sign in</Link>
           </Button>
           <Button asChild size="sm" className="bg-slate-900 hover:bg-slate-800 text-white">

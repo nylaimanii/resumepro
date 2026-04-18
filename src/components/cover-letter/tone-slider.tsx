@@ -29,7 +29,7 @@ export function ToneSlider({
         onValueChange={([v]) => onChange(v)}
         className="w-full"
       />
-      <div className="flex justify-between text-[10px] text-muted-foreground select-none">
+      <div className="flex justify-between text-xs text-muted-foreground select-none">
         <span>formal</span>
         <span>professional</span>
         <span>conversational</span>

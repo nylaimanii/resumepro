@@ -33,7 +33,7 @@ export function ProjectsEditor({ projects, onChange }: { projects: Proj[]; onCha
         {projects.map((proj) => (
           <div key={proj.id} className="space-y-2 border rounded-md p-3">
             <div className="flex justify-end">
-              <Button variant="ghost" size="icon" className="h-6 w-6 text-destructive" onClick={() => onChange(projects.filter((p) => p.id !== proj.id))}>
+              <Button aria-label="delete project" variant="ghost" size="icon" className="h-6 w-6 text-destructive" onClick={() => onChange(projects.filter((p) => p.id !== proj.id))}>
                 <Trash2 className="h-3 w-3" />
               </Button>
             </div>
@@ -70,7 +70,7 @@ export function ProjectsEditor({ projects, onChange }: { projects: Proj[]; onCha
                     value={b}
                     onChange={(e) => { const bullets = [...proj.bullets]; bullets[bi] = e.target.value; update(proj.id, { bullets }); }}
                   />
-                  <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => update(proj.id, { bullets: proj.bullets.filter((_, i) => i !== bi) })}>
+                  <Button aria-label="remove bullet" variant="ghost" size="icon" className="h-7 w-7" onClick={() => update(proj.id, { bullets: proj.bullets.filter((_, i) => i !== bi) })}>
                     <X className="h-3 w-3" />
                   </Button>
                 </div>

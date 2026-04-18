@@ -1,0 +1,6 @@
+{
+  "functions": {
+    "src/app/api/export-pdf/route.tsx": { "maxDuration": 30 },
+    "src/app/api/export-cover-letter-pdf/route.tsx": { "maxDuration": 30 }
+  }
+}

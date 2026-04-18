@@ -84,7 +84,7 @@ export function UploadDropzone({ onSuccess, title, disabled }: Props) {
         onDragLeave={() => setDragOver(false)}
         onDrop={onDrop}
         className={cn(
-          "rounded-lg border-2 border-dashed p-12 text-center cursor-pointer transition-colors",
+          "rounded-lg border-2 border-dashed p-6 sm:p-12 text-center cursor-pointer transition-colors",
           dragOver && "border-primary bg-accent/10",
           file && !uploading && "border-green-500 bg-green-50 dark:bg-green-950/20",
           uploading && "opacity-60 cursor-not-allowed",

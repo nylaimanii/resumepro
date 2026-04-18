@@ -86,9 +86,9 @@ export function ExperienceEditor({
         {experiences.map((exp, idx) => (
           <div key={exp.id} className="space-y-2 border rounded-md p-3">
             <div className="flex justify-end gap-1">
-              <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => move(idx, -1)} disabled={idx === 0}><ArrowUp className="h-3 w-3" /></Button>
-              <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => move(idx, 1)} disabled={idx === experiences.length - 1}><ArrowDown className="h-3 w-3" /></Button>
-              <Button variant="ghost" size="icon" className="h-6 w-6 text-destructive" onClick={() => onChange(experiences.filter((e) => e.id !== exp.id))}><Trash2 className="h-3 w-3" /></Button>
+              <Button aria-label="move up" variant="ghost" size="icon" className="h-6 w-6" onClick={() => move(idx, -1)} disabled={idx === 0}><ArrowUp className="h-3 w-3" /></Button>
+              <Button aria-label="move down" variant="ghost" size="icon" className="h-6 w-6" onClick={() => move(idx, 1)} disabled={idx === experiences.length - 1}><ArrowDown className="h-3 w-3" /></Button>
+              <Button aria-label="delete experience" variant="ghost" size="icon" className="h-6 w-6 text-destructive" onClick={() => onChange(experiences.filter((e) => e.id !== exp.id))}><Trash2 className="h-3 w-3" /></Button>
             </div>
             <div className="grid grid-cols-2 gap-2">
               <div className="space-y-1"><Label className="text-xs">role</Label><Input className="h-7 text-sm" value={exp.role} onChange={(e) => update(exp.id, { role: e.target.value })} /></div>
@@ -117,14 +117,14 @@ export function ExperienceEditor({
                     onChange={(e) => updateBullet(exp.id, bi, e.target.value)}
                   />
                   <Button
+                    aria-label="improve bullet with ai"
                     variant="ghost" size="icon" className="h-7 w-7 shrink-0"
                     disabled={rewriting === `${exp.id}-${bi}`}
                     onClick={() => rewriteBullet(exp.id, bi, bullet)}
-                    title="improve with ai"
                   >
                     <Sparkles className="h-3 w-3" />
                   </Button>
-                  <Button variant="ghost" size="icon" className="h-7 w-7 shrink-0" onClick={() => removeBullet(exp.id, bi)}>
+                  <Button aria-label="remove bullet" variant="ghost" size="icon" className="h-7 w-7 shrink-0" onClick={() => removeBullet(exp.id, bi)}>
                     <X className="h-3 w-3" />
                   </Button>
                 </div>

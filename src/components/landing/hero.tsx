@@ -8,19 +8,19 @@ export function Hero() {
         ✨ now with ai-powered analysis
       </div>
 
-      <h1 className="text-5xl lg:text-7xl font-semibold tracking-tight text-slate-900 max-w-4xl mx-auto leading-[1.08]">
+      <h1 className="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight text-slate-900 max-w-4xl mx-auto leading-[1.08] px-2">
         the resume tool that actually tells you what&apos;s wrong
       </h1>
 
-      <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+      <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed px-2">
         ats scoring based on real metrics. ai suggestions you can apply with one click. free, forever.
       </p>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <Button asChild size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4 w-full sm:w-auto">
+        <Button asChild size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8 w-full sm:w-auto">
           <Link href="/auth/signup">get started free</Link>
         </Button>
-        <Button asChild size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8">
+        <Button asChild size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8 w-full sm:w-auto">
           <a href="#demo">try the demo</a>
         </Button>
       </div>

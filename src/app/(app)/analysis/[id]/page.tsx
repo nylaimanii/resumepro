@@ -67,7 +67,7 @@ export default async function AnalysisPage({ params }: { params: Promise<{ id: s
         <RedFlags flags={analysis.red_flags ?? []} />
       </div>
 
-      <div className="flex gap-3 justify-end pt-2">
+      <div className="flex flex-wrap gap-2 justify-end pt-2">
         <Button variant="outline" disabled>export pdf</Button>
         <Button asChild variant="outline">
           <Link href={`/cover-letter/new?resume_id=${analysis.resume_id}${analysis.job_target_id ? `&job_target_id=${analysis.job_target_id}` : ""}`}>

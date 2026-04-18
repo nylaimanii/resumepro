@@ -45,7 +45,7 @@ export function SkillsEditor({ skills, onChange }: { skills: Skills; onChange: (
           {cat.items.map((item) => (
             <Badge key={item} variant="secondary" className="gap-1 pr-1">
               {item}
-              <button type="button" onClick={() => removeSkill(item)} className="hover:text-destructive">
+              <button type="button" aria-label={`remove ${item}`} onClick={() => removeSkill(item)} className="hover:text-destructive">
                 <X className="h-2.5 w-2.5" />
               </button>
             </Badge>

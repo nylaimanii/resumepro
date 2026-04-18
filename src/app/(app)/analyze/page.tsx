@@ -57,7 +57,7 @@ export default function AnalyzePage() {
   }
 
   return (
-    <main className="max-w-2xl mx-auto p-8 space-y-6">
+    <main className="max-w-2xl mx-auto px-4 py-6 sm:py-8 space-y-6">
       <h1 className="text-2xl font-bold">upload your resume</h1>
 
       {!uploadResult ? (

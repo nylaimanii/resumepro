@@ -22,7 +22,7 @@ export function EducationEditor({ education, onChange }: { education: Edu[]; onC
         {education.map((edu) => (
           <div key={edu.id} className="space-y-2 border rounded-md p-3">
             <div className="flex justify-end">
-              <Button variant="ghost" size="icon" className="h-6 w-6 text-destructive" onClick={() => onChange(education.filter((e) => e.id !== edu.id))}><Trash2 className="h-3 w-3" /></Button>
+              <Button aria-label="delete education" variant="ghost" size="icon" className="h-6 w-6 text-destructive" onClick={() => onChange(education.filter((e) => e.id !== edu.id))}><Trash2 className="h-3 w-3" /></Button>
             </div>
             <div className="grid grid-cols-2 gap-2">
               <div className="space-y-1"><Label className="text-xs">school</Label><Input className="h-7 text-sm" value={edu.school} onChange={(e) => update(edu.id, { school: e.target.value })} /></div>

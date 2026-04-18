@@ -83,11 +83,11 @@ export function DemoSection() {
 
       <Card className="border-slate-200 shadow-none">
         <CardHeader className="pb-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <CardTitle className="text-sm font-semibold text-slate-700">sample inputs</CardTitle>
             <button
               onClick={useSample}
-              className="text-xs text-slate-400 hover:text-slate-700 transition-colors underline underline-offset-2"
+              className="text-xs text-slate-400 hover:text-slate-700 transition-colors underline underline-offset-2 text-left sm:text-right"
             >
               use sample data
             </button>
@@ -136,7 +136,7 @@ export function DemoSection() {
                         <li key={i} className="flex items-start gap-2">
                           <Badge
                             variant="secondary"
-                            className={`text-[10px] shrink-0 mt-0.5 ${
+                            className={`text-xs shrink-0 mt-0.5 ${
                               f.severity === "high"
                                 ? "bg-red-50 text-red-700"
                                 : f.severity === "medium"
