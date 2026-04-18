@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { ScoreGauge } from "@/components/analysis/score-gauge";
@@ -68,7 +69,9 @@ export default async function AnalysisPage({ params }: { params: Promise<{ id: s
 
       <div className="flex gap-3 justify-end pt-2">
         <Button variant="outline" disabled>export pdf</Button>
-        <Button disabled>edit in builder</Button>
+        <Button asChild>
+          <Link href={`/builder/${analysis.resume_id}`}>edit in builder</Link>
+        </Button>
       </div>
     </main>
   );

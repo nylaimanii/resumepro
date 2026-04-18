@@ -15,7 +15,7 @@ export default async function DashboardPage() {
   const [{ data: analyses }, { count }, { data: profile }] = await Promise.all([
     supabase
       .from("analyses")
-      .select("id, ats_score, created_at, resumes(title), job_targets(job_title, company)")
+      .select("id, ats_score, created_at, resume_id, resumes(title), job_targets(job_title, company)")
       .eq("user_id", user.id)
       .order("created_at", { ascending: false })
       .limit(10),
@@ -120,12 +120,15 @@ export default async function DashboardPage() {
                       {resume?.title} · {formatDistanceToNow(new Date(a.created_at), { addSuffix: true })}
                     </p>
                   </div>
-                  <div className="flex items-center gap-3 shrink-0">
+                  <div className="flex items-center gap-2 shrink-0">
                     <Badge variant="secondary" className={`${colors.text} ${colors.bg} border-0 tabular-nums`}>
                       {a.ats_score}
                     </Badge>
                     <Button asChild variant="ghost" size="sm" className="text-xs h-7">
                       <Link href={`/analysis/${a.id}`}>view</Link>
+                    </Button>
+                    <Button asChild variant="ghost" size="sm" className="text-xs h-7">
+                      <Link href={`/builder/${a.resume_id}`}>edit</Link>
                     </Button>
                   </div>
                 </div>
