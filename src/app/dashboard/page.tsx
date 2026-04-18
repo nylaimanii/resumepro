@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,9 @@ export default async function DashboardPage() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-4">
       <p className="text-xl font-semibold">welcome, {user.email}</p>
+      <Button asChild>
+        <Link href="/analyze">upload new resume</Link>
+      </Button>
       <form action="/auth/logout" method="POST">
         <Button type="submit" variant="outline">sign out</Button>
       </form>

@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; cd C:\\\\Users\\\\nyla\\\\resumepro; git add .; git commit -m \"upload + parse resume pdf docx to text\"; git push 2>&1)"
+    ]
+  }
+}
